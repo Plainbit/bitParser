@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Analysis Report (S3 Access Log)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section h2 {
+            color: #2c3e50;
+            margin: 0 0 20px 0;
+            font-size: 1.8em;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        .chart-wrapper {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        tr:hover {
+            background: #e3f2fd;
+        }
+        .no-data {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            padding: 40px;
+        }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Summary Analysis Report (S3 Access Log)</h1>
+            <p>Generated on 2025-10-21 12:47:36</p>
+        </div>
+        
+        
+        <div class="section">
+            <h2>1. Requester IP Statistics (Top 20)</h2>
+            <div class="chart-wrapper">
+                <canvas id="requesterIpsChart"></canvas>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requester</th>
+                        <th>Source IP</th>
+                        <th>Request Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>5043e0a2f5c9e33bf501c24bcde8204bf2bf4f8e4be8f9b60878bcce1c01d406</td>
+                <td>222.99.52.250</td>
+                <td>81</td>
+            </tr>
+            
+            <tr>
+                <td>svc:cloudtrail.amazonaws.com</td>
+                <td>-</td>
+                <td>73</td>
+            </tr>
+            
+            <tr>
+                <td>Unknown</td>
+                <td>222.99.52.250</td>
+                <td>56</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.16</td>
+                <td>5</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.5</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.67</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.11</td>
+                <td>4</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.44</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.53</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.30</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.21</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>Unknown</td>
+                <td>85.203.21.53</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.37</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.47</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/acces.admin</td>
+                <td>85.203.21.69</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>iam:user/access.admin</td>
+                <td>222.99.52.250</td>
+                <td>1</td>
+            </tr>
+            
+                </tbody>
+            </table>
+            <script>
+                const requesterIpsCtx = document.getElementById('requesterIpsChart').getContext('2d');
+                new Chart(requesterIpsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['5043e0a2f5c9e33bf501c24bcde8204bf2bf4f8e4be8f9b60878bcce1c01d406 (222.99.52.250)', 'svc:cloudtrail.amazonaws.com (-)', 'Unknown (222.99.52.250)', 'iam:user/acces.admin (85.203.21.16)', 'iam:user/acces.admin (85.203.21.5)', 'iam:user/acces.admin (85.203.21.67)', 'iam:user/acces.admin (85.203.21.11)', 'iam:user/acces.admin (85.203.21.44)', 'iam:user/acces.admin (85.203.21.53)', 'iam:user/acces.admin (85.203.21.30)'],
+                        datasets: [{
+                            data: [81, 73, 56, 5, 4, 4, 4, 3, 2, 1],
+                            backgroundColor: [
+                                'rgba(231, 76, 60, 0.8)',
+                                'rgba(52, 152, 219, 0.8)',
+                                'rgba(46, 204, 113, 0.8)',
+                                'rgba(155, 89, 182, 0.8)',
+                                'rgba(241, 196, 15, 0.8)',
+                                'rgba(230, 126, 34, 0.8)',
+                                'rgba(26, 188, 156, 0.8)',
+                                'rgba(142, 68, 173, 0.8)',
+                                'rgba(39, 174, 96, 0.8)',
+                                'rgba(41, 128, 185, 0.8)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Top 10 Requesters by Request Count'
+                            },
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        
+        
+        <div class="section">
+            <h2>2. Operation Statistics (Top 20)</h2>
+            <div class="chart-wrapper">
+                <canvas id="operationsChart"></canvas>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Bucket</th>
+                        <th>Prefix</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>REST.GET.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>Secret/Top_Secret</td>
+                <td>3</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>Secret/Top_Secret</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>REST.GET.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>favicon.ico</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>REST.PUT.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>Secret/Top_Secret</td>
+                <td>2</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/ap-northeast-3/2025/10/01/231307122651_CloudTrail-Digest_ap-northeast-3_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/ap-south-1/2025/10/01/231307122651_CloudTrail-Digest_ap-south-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/ca-central-1/2025/10/01/231307122651_CloudTrail-Digest_ca-central-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T132353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/eu-central-1/2025/10/01/231307122651_CloudTrail-Digest_eu-central-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T132353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/eu-north-1/2025/10/01/231307122651_CloudTrail-Digest_eu-north-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/eu-north-1/2025/10/01/231307122651_CloudTrail-Digest_eu-north-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T132353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/eu-west-1/2025/10/01/231307122651_CloudTrail-Digest_eu-west-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/ap-southeast-1/2025/10/01/231307122651_CloudTrail-Digest_ap-southeast-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/ap-southeast-1/2025/10/01/231307122651_CloudTrail-Digest_ap-southeast-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T132353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/ap-northeast-3/2025/10/01/231307122651_CloudTrail-Digest_ap-northeast-3_PLAINBIT-TRAIL_ap-northeast-2_20251001T132353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/us-east-1/2025/10/01/231307122651_CloudTrail-Digest_us-east-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/eu-west-3/2025/10/01/231307122651_CloudTrail-Digest_eu-west-3_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/eu-west-2/2025/10/01/231307122651_CloudTrail-Digest_eu-west-2_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/us-east-2/2025/10/01/231307122651_CloudTrail-Digest_us-east-2_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/us-west-2/2025/10/01/231307122651_CloudTrail-Digest_us-west-2_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+            <tr>
+                <td>REST.COPY.OBJECT</td>
+                <td>plainbit-s3</td>
+                <td>AWSLogs/231307122651/CloudTrail-Digest/us-west-1/2025/10/01/231307122651_CloudTrail-Digest_us-west-1_PLAINBIT-TRAIL_ap-northeast-2_20251001T122353Z.json.gz</td>
+                <td>1</td>
+            </tr>
+            
+                </tbody>
+            </table>
+            <script>
+                const operationsCtx = document.getElementById('operationsChart').getContext('2d');
+                new Chart(operationsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['REST.GET.OBJECT - plainbit-s3', 'REST.COPY.OBJECT - plainbit-s3', 'REST.GET.OBJECT - plainbit-s3', 'REST.PUT.OBJECT - plainbit-s3', 'REST.COPY.OBJECT - plainbit-s3', 'REST.COPY.OBJECT - plainbit-s3', 'REST.COPY.OBJECT - plainbit-s3', 'REST.COPY.OBJECT - plainbit-s3', 'REST.COPY.OBJECT - plainbit-s3', 'REST.COPY.OBJECT - plainbit-s3'],
+                        datasets: [{
+                            data: [3, 2, 2, 2, 1, 1, 1, 1, 1, 1],
+                            backgroundColor: [
+                                'rgba(231, 76, 60, 0.8)',
+                                'rgba(52, 152, 219, 0.8)',
+                                'rgba(46, 204, 113, 0.8)',
+                                'rgba(155, 89, 182, 0.8)',
+                                'rgba(241, 196, 15, 0.8)',
+                                'rgba(230, 126, 34, 0.8)',
+                                'rgba(26, 188, 156, 0.8)',
+                                'rgba(142, 68, 173, 0.8)',
+                                'rgba(39, 174, 96, 0.8)',
+                                'rgba(41, 128, 185, 0.8)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Top 10 Operations by Count'
+                            },
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        
+        
+        <div class="section">
+            <h2>3. UserAgent Statistics</h2>
+            <div class="chart-wrapper">
+                <canvas id="userAgentsChart"></canvas>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>UserAgent Type</th>
+                        <th>Usage Count</th>
+                        <th>Usage Statistics (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td title="Browser">Browser</td>
+                <td>140</td>
+                <td>54.05%</td>
+            </tr>
+            
+            <tr>
+                <td title="Other">Other</td>
+                <td>93</td>
+                <td>35.91%</td>
+            </tr>
+            
+            <tr>
+                <td title="AWS CLI/SDK">AWS CLI/SDK</td>
+                <td>26</td>
+                <td>10.04%</td>
+            </tr>
+            
+                </tbody>
+            </table>
+            <script>
+                const userAgentsCtx = document.getElementById('userAgentsChart').getContext('2d');
+                new Chart(userAgentsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Browser', 'Other', 'AWS CLI/SDK'],
+                        datasets: [{
+                            data: [140, 93, 26],
+                            backgroundColor: [
+                                'rgba(231, 76, 60, 0.8)',
+                                'rgba(52, 152, 219, 0.8)',
+                                'rgba(46, 204, 113, 0.8)',
+                                'rgba(155, 89, 182, 0.8)',
+                                'rgba(241, 196, 15, 0.8)',
+                                'rgba(230, 126, 34, 0.8)',
+                                'rgba(26, 188, 156, 0.8)',
+                                'rgba(142, 68, 173, 0.8)',
+                                'rgba(39, 174, 96, 0.8)',
+                                'rgba(41, 128, 185, 0.8)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Top 10 UserAgents by Count'
+                            },
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        
+        
+        <div class="section">
+            <h2>4. MITRE ATT&CK Tactics Statistics</h2>
+            <div class="chart-wrapper">
+                <canvas id="mitreTacticsChart"></canvas>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>MITRE ATT&CK Tactics</th>
+                        <th>Operation</th>
+                        <th>Operation Hit Count</th>
+                        <th>Operation Statistics (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>Discovery</td>
+                <td>REST.OPTIONS.PREFLIGHT</td>
+                <td>55</td>
+                <td>21.24%</td>
+            </tr>
+            
+            <tr>
+                <td>Persistence</td>
+                <td>REST.PUT.OBJECT</td>
+                <td>41</td>
+                <td>15.83%</td>
+            </tr>
+            
+            <tr>
+                <td>Discovery</td>
+                <td>REST.GET.ACL</td>
+                <td>36</td>
+                <td>13.9%</td>
+            </tr>
+            
+            <tr>
+                <td>Exfiltration</td>
+                <td>REST.COPY.OBJECT</td>
+                <td>20</td>
+                <td>7.72%</td>
+            </tr>
+            
+            <tr>
+                <td>Discovery</td>
+                <td>REST.HEAD.OBJECT</td>
+                <td>15</td>
+                <td>5.79%</td>
+            </tr>
+            
+            <tr>
+                <td>Discovery</td>
+                <td>REST.HEAD.BUCKET</td>
+                <td>13</td>
+                <td>5.02%</td>
+            </tr>
+            
+            <tr>
+                <td>Discovery</td>
+                <td>REST.GET.BUCKET</td>
+                <td>12</td>
+                <td>4.63%</td>
+            </tr>
+            
+            <tr>
+                <td>Discovery</td>
+                <td>REST.GET.ENCRYPTION</td>
+                <td>5</td>
+                <td>1.93%</td>
+            </tr>
+            
+            <tr>
+                <td>Exfiltration</td>
+                <td>REST.GET.OBJECT</td>
+                <td>5</td>
+                <td>1.93%</td>
+            </tr>
+            
+            <tr>
+                <td>Discovery</td>
+                <td>REST.GET.BUCKETPOLICY</td>
+                <td>2</td>
+                <td>0.77%</td>
+            </tr>
+            
+            <tr>
+                <td>Exfiltration</td>
+                <td>REST.PUT.BUCKETPOLICY</td>
+                <td>1</td>
+                <td>0.39%</td>
+            </tr>
+            
+            <tr>
+                <td>Impact</td>
+                <td>REST.DELETE.OBJECT</td>
+                <td>1</td>
+                <td>0.39%</td>
+            </tr>
+            
+                </tbody>
+            </table>
+            <script>
+                const mitreTacticsCtx = document.getElementById('mitreTacticsChart').getContext('2d');
+                new Chart(mitreTacticsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Discovery', 'Persistence', 'Discovery', 'Exfiltration', 'Discovery', 'Discovery', 'Discovery', 'Discovery', 'Exfiltration', 'Discovery'],
+                        datasets: [{
+                            data: [55, 41, 36, 20, 15, 13, 12, 5, 5, 2],
+                            backgroundColor: [
+                                'rgba(231, 76, 60, 0.8)',
+                                'rgba(52, 152, 219, 0.8)',
+                                'rgba(46, 204, 113, 0.8)',
+                                'rgba(155, 89, 182, 0.8)',
+                                'rgba(241, 196, 15, 0.8)',
+                                'rgba(230, 126, 34, 0.8)',
+                                'rgba(26, 188, 156, 0.8)',
+                                'rgba(142, 68, 173, 0.8)',
+                                'rgba(39, 174, 96, 0.8)',
+                                'rgba(41, 128, 185, 0.8)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Top 10 MITRE ATT&CK Tactics by Hit Count'
+                            },
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        
+        
+        <div class="footer">
+            <p>Summary Analysis Report (S3 Access Log) - Generated by PLAINBIT Co., LTD.</p>
+        </div>
+    </div>
+</body>
+</html>
+        
